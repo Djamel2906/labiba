@@ -1,8 +1,9 @@
 import { exec } from 'child_process';
 
-console.log('🚀 Starting build process with npx vite...');
+console.log('🚀 Starting build process with vite...');
 
-exec('npx vite build', (error, stdout, stderr) => {
+// استخدام المسار النسبي للمشروع بدلاً من npx
+exec('./node_modules/.bin/vite build', (error, stdout, stderr) => {
   if (error) {
     console.error(`❌ Build failed: ${error.message}`);
     process.exit(1);
