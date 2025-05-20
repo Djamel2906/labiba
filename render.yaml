@@ -2,11 +2,11 @@ services:
   - type: web
     name: labiba
     env: node
-    envVersion: 20.17.0 # إصدار Node.js مثبت ومتوافق
+    envVersion: 20.17.0       # إصدار Node.js مستقر ومتوافق
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: RENDER_USE_BUN
-        value: false # تعطيل Bun لأن المشروع يعتمد على npm
+        value: false          # تعطيل Bun لأننا نستخدم npm

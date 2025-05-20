@@ -10,7 +10,12 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// إعادة توجيه جميع الطلبات إلى index.html (لـ SPA)
+// نقطة نهاية API (مثال)
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from backend!' });
+});
+
+// إعادة توجيه كل الطلبات إلى index.html (لـ SPA)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
